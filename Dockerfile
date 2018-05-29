@@ -39,14 +39,14 @@ RUN yum -y update && \
       python-pip && \
     yum clean all && \
     cd /etc/grid-security && \
-    wget http://www.lip.pt/~david/dirac/vomsdir.tgz && \
-    tar zxvf vomsdir.tgz && \
+    wget http://www.lip.pt/~david/dirac/voms.tgz && \
+    tar zxvf voms.tgz && \
     mkdir -p ${DIRAC} && \
     cd ${DIRAC} && \
     wget -np -O dirac-install \
       https://github.com/DIRACGrid/DIRAC/raw/integration/Core/scripts/dirac-install.py --no-check-certificate && \
     chmod +x dirac-install && \
-    ./dirac-install -r v6r20 -V egi
+    ./dirac-install -V egi
 
 WORKDIR /root
 
